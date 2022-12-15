@@ -1,3 +1,4 @@
+import java.security.Permission;
 
 public class Main {
     public static void main(String[] args) {
@@ -8,17 +9,17 @@ public class Main {
                 .build();
         Person son = mom.newChildBuilder()
                 .setName("Antoshca").build();
-        System.out.printf("У %s есть сын, %s ", mom, son);
+        System.out.printf("У %s есть сын, %s \n", mom, son);
 
-        try{
+        try {
             new Person.PersonBuilder().build();
-        }catch(IllegalStateException e) {
+        } catch (IllegalStateException e) {
             e.printStackTrace();
         }
 
-        try{
+        try {
             new Person.PersonBuilder().setAge(-100).build();
-        }catch(IllegalArgumentException e) {
+        } catch (IllegalArgumentException e) {
             e.printStackTrace();
         }
     }
